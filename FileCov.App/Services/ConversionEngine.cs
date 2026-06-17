@@ -174,7 +174,7 @@ public class ConversionEngine : IConversionEngine
         task.Status = ConversionStatus.Processing;
         OnTaskStatusChanged(task);
 
-        var progress = new Progress<double>(p => task.Progress = p);
+        var progress = new Progress<double>(p => task.Progress = p * 100);
 
         try
         {
@@ -187,9 +187,21 @@ public class ConversionEngine : IConversionEngine
             task.EndTime = DateTime.UtcNow;
             result.Duration = task.EndTime.Value - task.StartTime;
             task.Result = result;
-            task.Status = ConversionStatus.Completed;
-            _completionSources.TryRemove(task.Id, out var successTcs);
-            successTcs?.TrySetResult(result);
+
+            if (result.Success)
+            {
+                task.Status = ConversionStatus.Completed;
+                task.Progress = 100;
+                _completionSources.TryRemove(task.Id, out var successTcs);
+                successTcs?.TrySetResult(result);
+            }
+            else
+            {
+                task.Status = ConversionStatus.Failed;
+                task.ErrorMessage = result.ErrorMessage;
+                _completionSources.TryRemove(task.Id, out var failTcs);
+                failTcs?.TrySetResult(result);
+            }
         }
         catch (OperationCanceledException)
         {
