@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+    <PackageReference Include="itext7" Version="8.0.5" />
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+    <PackageReference Include="MailKit" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FileCov.Contracts\FileCov.Contracts.csproj" />
+    <ProjectReference Include="..\FileCov.Plugins\FileCov.Plugins.csproj" />
+  </ItemGroup>
+
+</Project>

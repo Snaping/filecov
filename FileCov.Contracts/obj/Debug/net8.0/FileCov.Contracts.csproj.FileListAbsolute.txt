@@ -1,0 +1,12 @@
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\bin\Debug\net8.0\FileCov.Contracts.deps.json
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\bin\Debug\net8.0\FileCov.Contracts.dll
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\bin\Debug\net8.0\FileCov.Contracts.pdb
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\FileCov.Contracts.csproj.AssemblyReference.cache
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\FileCov.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\FileCov.Contracts.AssemblyInfoInputs.cache
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\FileCov.Contracts.AssemblyInfo.cs
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\FileCov.Contracts.csproj.CoreCompileInputs.cache
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\FileCov.Contracts.dll
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\refint\FileCov.Contracts.dll
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\FileCov.Contracts.pdb
+d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\ref\FileCov.Contracts.dll

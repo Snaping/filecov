@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ayon6P3mY1U=",
+  "success": true,
+  "projectFilePath": "D:\\WorkSpace\\Agent\\MultiSoloSpace\\617\\filecov\\FileCov.Contracts\\FileCov.Contracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HUAWEI\\.nuget\\packages\\system.componentmodel.composition\\8.0.0\\system.componentmodel.composition.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

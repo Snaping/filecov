@@ -1,0 +1,15 @@
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\bin\Debug\net8.0\FileCov.Plugins.deps.json
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\bin\Debug\net8.0\FileCov.Plugins.dll
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\bin\Debug\net8.0\FileCov.Plugins.pdb
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\bin\Debug\net8.0\FileCov.Contracts.dll
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\bin\Debug\net8.0\FileCov.Contracts.pdb
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov.Plugins.csproj.AssemblyReference.cache
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov.Plugins.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov.Plugins.AssemblyInfoInputs.cache
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov.Plugins.AssemblyInfo.cs
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov.Plugins.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov..C314757D.Up2Date
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov.Plugins.dll
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\refint\FileCov.Plugins.dll
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov.Plugins.pdb
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\ref\FileCov.Plugins.dll
