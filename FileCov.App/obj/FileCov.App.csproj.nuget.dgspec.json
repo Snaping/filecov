@@ -73,6 +73,10 @@
             "itext7": {
               "target": "Package",
               "version": "[8.0.5, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[8.0.5, )"
             }
           },
           "imports": [
@@ -226,6 +230,10 @@
               "version": "[0.104.2, )"
             },
             "itext7": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "itext7.bouncy-castle-adapter": {
               "target": "Package",
               "version": "[8.0.5, )"
             }

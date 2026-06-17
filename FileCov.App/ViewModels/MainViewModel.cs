@@ -187,7 +187,6 @@ public class MainViewModel : INotifyPropertyChanged
             };
 
             Tasks.Add(task);
-            _engine.SubmitTaskAsync(task);
         }
 
         UpdateProgress();

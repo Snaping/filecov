@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "ClosedXML/0.104.2": {
         "type": "package",
         "dependencies": {
@@ -170,6 +183,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.5": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.5"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.5": {
         "type": "package",
         "dependencies": {
@@ -191,6 +221,12 @@
         "type": "package",
         "dependencies": {
           "itext": "8.0.5"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.5": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.5"
         }
       },
       "Microsoft.DotNet.PlatformAbstractions/1.1.0": {
@@ -1508,6 +1544,26 @@
     }
   },
   "libraries": {
+    "BouncyCastle.Cryptography/2.2.1": {
+      "sha512": "A6Zr52zVqJKt18ZBsTnX0qhG0kwIQftVAjLmszmkiR/trSp8H+xj1gUOzk7XHwaKgyREMSV1v9XaKrBUeIOdvQ==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.2.1.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
+      ]
+    },
     "ClosedXML/0.104.2": {
       "sha512": "gOkSjQ152MhpKmw70cBkJV+FnaZAWzDwM36luRf/7FlWYnNeH++9XYdGTd0Y4KQlVPkKVxy948M5MMsnsGC4GQ==",
       "type": "package",
@@ -1666,6 +1722,22 @@
         "lib/netstandard2.0/itext.svg.xml"
       ]
     },
+    "itext.bouncy-castle-adapter/8.0.5": {
+      "sha512": "mam0CtYkKmVwdX7wU1Zlg9oVW0B9efMASfAEIm+fQGovc9HcplsmP3MylS+VmQHbYlCNSH68DQlVhDz6Cu9WxQ==",
+      "type": "package",
+      "path": "itext.bouncy-castle-adapter/8.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "itext.bouncy-castle-adapter.8.0.5.nupkg.sha512",
+        "itext.bouncy-castle-adapter.nuspec",
+        "lib/net461/itext.bouncy-castle-adapter.dll",
+        "lib/net461/itext.bouncy-castle-adapter.xml",
+        "lib/netstandard2.0/itext.bouncy-castle-adapter.dll",
+        "lib/netstandard2.0/itext.bouncy-castle-adapter.xml"
+      ]
+    },
     "itext.commons/8.0.5": {
       "sha512": "exnLqeWOnn0Ee393bHf3zWTmcYuQfYuj7iIbMluG49XFczMWMMXrN9UvMmt5iYOKq0mGZsYb1eRoVATGuDiXGQ==",
       "type": "package",
@@ -1694,6 +1766,20 @@
         "gnu-agpl-v3.0.md",
         "itext7.8.0.5.nupkg.sha512",
         "itext7.nuspec"
+      ]
+    },
+    "itext7.bouncy-castle-adapter/8.0.5": {
+      "sha512": "9jpalaOyxbcuhbl9yJJQGXdseKUFrKlUjjcjIvReb3Qz4Aw0F+WNXKOo0sax87TGGNb66fyHsfJib3JTnfzRYw==",
+      "type": "package",
+      "path": "itext7.bouncy-castle-adapter/8.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itext7.bouncy-castle-adapter.8.0.5.nupkg.sha512",
+        "itext7.bouncy-castle-adapter.nuspec"
       ]
     },
     "Microsoft.DotNet.PlatformAbstractions/1.1.0": {
@@ -4965,7 +5051,8 @@
     "net8.0": [
       "ClosedXML >= 0.104.2",
       "FileCov.Contracts >= 1.0.0",
-      "itext7 >= 8.0.5"
+      "itext7 >= 8.0.5",
+      "itext7.bouncy-castle-adapter >= 8.0.5"
     ]
   },
   "packageFolders": {
@@ -5028,6 +5115,10 @@
             "version": "[0.104.2, )"
           },
           "itext7": {
+            "target": "Package",
+            "version": "[8.0.5, )"
+          },
+          "itext7.bouncy-castle-adapter": {
             "target": "Package",
             "version": "[8.0.5, )"
           }

@@ -61,3 +61,4 @@ D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.App\obj\Debug\net8.0-windo
 D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.App\obj\Debug\net8.0-windows\FileCov.App.genruntimeconfig.cache
 D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.App\obj\Debug\net8.0-windows\ref\FileCov.App.dll
 D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.App\obj\Debug\net8.0-windows\FileCov.App.sourcelink.json
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.App\bin\Debug\net8.0-windows\itext.bouncy-castle-adapter.dll
