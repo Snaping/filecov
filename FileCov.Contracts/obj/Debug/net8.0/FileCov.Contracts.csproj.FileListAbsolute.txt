@@ -10,3 +10,4 @@ d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0
 d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\refint\FileCov.Contracts.dll
 d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\FileCov.Contracts.pdb
 d:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\ref\FileCov.Contracts.dll
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Contracts\obj\Debug\net8.0\FileCov.Contracts.sourcelink.json

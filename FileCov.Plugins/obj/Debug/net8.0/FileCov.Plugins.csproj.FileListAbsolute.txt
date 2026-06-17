@@ -13,3 +13,4 @@ D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\F
 D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\refint\FileCov.Plugins.dll
 D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov.Plugins.pdb
 D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\ref\FileCov.Plugins.dll
+D:\WorkSpace\Agent\MultiSoloSpace\617\filecov\FileCov.Plugins\obj\Debug\net8.0\FileCov.Plugins.sourcelink.json

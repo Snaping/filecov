@@ -110,9 +110,7 @@
                             <DataTemplate>
                                 <TextBlock Text="{Binding Status}" FontWeight="Medium">
                                     <TextBlock.Foreground>
-                                        <MultiBinding Converter="{StaticResource StatusToBrushConverter}">
-                                            <Binding Path="Status"/>
-                                        </MultiBinding>
+                                    <Binding Path="Status" Converter="{StaticResource StatusToBrushConverter}"/>
                                     </TextBlock.Foreground>
                                 </TextBlock>
                             </DataTemplate>
