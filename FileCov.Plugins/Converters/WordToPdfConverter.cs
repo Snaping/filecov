@@ -8,6 +8,9 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Kernel.Geom;
+using iText.Kernel.Font;
+using iText.IO.Font;
+using iText.Layout.Properties;
 
 namespace FileCov.Plugins.Converters;
 
@@ -56,21 +59,27 @@ public class WordToPdfConverter : IConverter
                 pdf.SetDefaultPageSize(pageSize);
                 using var document = new Document(pdf);
 
+                var font = GetChineseFont();
+                if (font != null)
+                {
+                    document.SetFont(font);
+                    document.SetFontSize(11);
+                }
+
                 var paragraphs = text.Split('\n');
                 for (int i = 0; i < paragraphs.Length; i++)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
 
-                    if (!string.IsNullOrEmpty(paragraphs[i]))
+                    var paragraph = new Paragraph(paragraphs[i] ?? "");
+                    if (font != null)
                     {
-                        document.Add(new Paragraph(paragraphs[i]));
-                    }
-                    else
-                    {
-                        document.Add(new Paragraph());
+                        paragraph.SetFont(font);
                     }
 
-                    progress?.Report(0.4 + 0.6 * ((double)(i + 1) / paragraphs.Length));
+                    document.Add(paragraph);
+
+                    progress?.Report(0.4 + 0.6 * ((double)(i + 1) / Math.Max(paragraphs.Length, 1)));
                 }
 
                 document.Close();
@@ -139,6 +148,37 @@ public class WordToPdfConverter : IConverter
         }
 
         return textBuilder.ToString();
+    }
+
+    private static PdfFont? GetChineseFont()
+    {
+        var fontPaths = new[]
+        {
+            @"C:\Windows\Fonts\simsun.ttc",
+            @"C:\Windows\Fonts\simhei.ttf",
+            @"C:\Windows\Fonts\msyh.ttc",
+            @"C:\Windows\Fonts\msyh.ttf",
+            @"/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+            @"/System/Library/Fonts/PingFang.ttc"
+        };
+
+        foreach (var fontPath in fontPaths)
+        {
+            if (File.Exists(fontPath))
+            {
+                try
+                {
+                    var fontProgram = FontProgramFactory.CreateFont(fontPath);
+                    return PdfFontFactory.CreateFont(fontProgram, PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+        }
+
+        return null;
     }
 
     private static PageSize GetPageSize(string? pageSize)

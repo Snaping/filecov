@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FileCov.Plugins")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f54a4803aeeac5b4ac8453f737e9b976b0712a84")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3162b797fb634a047d1f7d7ada196887e1e71681")]
 [assembly: System.Reflection.AssemblyProductAttribute("FileCov.Plugins")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FileCov.Plugins")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

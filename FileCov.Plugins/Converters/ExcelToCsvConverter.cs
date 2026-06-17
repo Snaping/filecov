@@ -28,37 +28,68 @@ public class ExcelToCsvConverter : IConverter
             await Task.Run(() =>
             {
                 using var workbook = new XLWorkbook(inputPath);
-                var worksheet = workbook.Worksheet(1);
+                var worksheets = workbook.Worksheets.ToList();
 
-                var lastRowUsed = worksheet.LastRowUsed();
-                var lastColumnUsed = worksheet.LastColumnUsed();
-                var totalRows = lastRowUsed?.RowNumber() ?? 0;
-                var totalColumns = lastColumnUsed?.ColumnNumber() ?? 0;
+                if (worksheets.Count == 0)
+                {
+                    throw new InvalidDataException("Excel 文件中没有工作表");
+                }
 
-                cancellationToken.ThrowIfCancellationRequested();
-                progress?.Report(0.2);
+                var firstOutputPath = "";
 
-                using var writer = new StreamWriter(outputPath, false, new UTF8Encoding(true));
-
-                for (int row = 1; row <= totalRows; row++)
+                for (int sheetIndex = 0; sheetIndex < worksheets.Count; sheetIndex++)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
 
-                    var fields = new List<string>();
-                    for (int col = 1; col <= totalColumns; col++)
+                    var worksheet = worksheets[sheetIndex];
+                    var safeSheetName = GetSafeFileName(worksheet.Name);
+
+                    string sheetOutputPath;
+                    if (worksheets.Count == 1)
                     {
-                        var cell = worksheet.Cell(row, col);
-                        var value = cell.Value.ToString();
-                        fields.Add(EscapeCsvField(value));
+                        sheetOutputPath = outputPath;
+                    }
+                    else
+                    {
+                        var fileNameWithoutExt = Path.GetFileNameWithoutExtension(outputPath);
+                        var ext = Path.GetExtension(outputPath);
+                        var dir = Path.GetDirectoryName(outputPath)!;
+                        sheetOutputPath = Path.Combine(dir, $"{fileNameWithoutExt}_{safeSheetName}{ext}");
                     }
 
-                    writer.WriteLine(string.Join(",", fields));
-
-                    if (row % 100 == 0 || row == totalRows)
+                    if (string.IsNullOrEmpty(firstOutputPath))
                     {
-                        progress?.Report(0.2 + 0.8 * ((double)row / totalRows));
+                        firstOutputPath = sheetOutputPath;
+                    }
+
+                    var lastRowUsed = worksheet.LastRowUsed();
+                    var lastColumnUsed = worksheet.LastColumnUsed();
+                    var totalRows = lastRowUsed?.RowNumber() ?? 0;
+                    var totalColumns = lastColumnUsed?.ColumnNumber() ?? 0;
+
+                    using var writer = new StreamWriter(sheetOutputPath, false, new UTF8Encoding(true));
+
+                    for (int row = 1; row <= totalRows; row++)
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
+
+                        var fields = new List<string>();
+                        for (int col = 1; col <= totalColumns; col++)
+                        {
+                            var cell = worksheet.Cell(row, col);
+                            var value = cell.Value.ToString();
+                            fields.Add(EscapeCsvField(value));
+                        }
+
+                        writer.WriteLine(string.Join(",", fields));
+
+                        var overallProgress = (double)sheetIndex / worksheets.Count
+                                              + ((double)row / Math.Max(totalRows, 1)) / worksheets.Count;
+                        progress?.Report(0.1 + 0.9 * overallProgress);
                     }
                 }
+
+                outputPath = firstOutputPath;
             }, cancellationToken);
 
             stopwatch.Stop();
@@ -88,6 +119,13 @@ public class ExcelToCsvConverter : IConverter
                 Duration = stopwatch.Elapsed
             };
         }
+    }
+
+    private static string GetSafeFileName(string name)
+    {
+        var invalid = Path.GetInvalidFileNameChars();
+        var result = new string(name.Select(c => invalid.Contains(c) ? '_' : c).ToArray());
+        return string.IsNullOrWhiteSpace(result) ? "Sheet" : result.Trim();
     }
 
     private static string EscapeCsvField(string field)
